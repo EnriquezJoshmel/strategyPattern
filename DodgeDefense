@@ -1,0 +1,8 @@
+package strategyPattern;
+
+class DodgeDefense implements DefenseStrategy {
+    @Override
+    public void defend() {
+        System.out.println("Dodging the attack");
+    }
+}
