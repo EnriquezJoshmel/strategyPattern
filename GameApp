@@ -1,0 +1,54 @@
+package strategyPattern;
+
+public class GameApp {
+    public static void main(String[] args) {
+
+        AttackStrategy SwingSwordAttack = new SwingSwordAttack();
+        DefenseStrategy ShieldDefense = new ShieldDefense();
+        DefenseStrategy DodgeDefense = new DodgeDefense();
+        DefenseStrategy CreateMagicDefense = new CreateMagicDefense();
+
+        Knight knight = new Knight(SwingSwordAttack, ShieldDefense, DodgeDefense, CreateMagicDefense);
+
+        System.out.println("CHOOSE AVAILABLE MOVES FOR KNIGHT!");
+        System.out.print("1." + " " + "SHIELD: ");
+        knight.defend();
+        System.out.print("2." + " " + "DODGE: ");
+        knight.switchDefenseStrategy();
+        knight.defend();
+        System.out.print("3." + " " + "MAGIC BARRIER: ");
+        knight.switchDefenseStrategy();
+        knight.defend();
+        System.out.print("4." + " " + "SWORD: ");
+        knight.attack();
+        System.out.println();
+
+        AttackStrategy CastSpellAttack = new CastSpellAttack();
+        DefenseStrategy CreateMagicDefense1 = new CreateMagicDefense();
+
+        Wizard wizard = new Wizard(CastSpellAttack, CreateMagicDefense1);
+
+        System.out.println("CHOOSE AVAILABLE MOVES FOR WIZARD!");
+        System.out.print("1." + " " + "SPELL: ");
+        wizard.attack();
+        System.out.print("2." + " " + "MAGIC BARRIER: ");
+        wizard.defend();
+        System.out.println();
+
+
+        AttackStrategy shootArrowAttack = new ShootArrowAttack();
+        DefenseStrategy DodgeDefense1 = new DodgeDefense();
+
+        Archer archer = new Archer(shootArrowAttack, DodgeDefense1);
+
+        System.out.println("CHOOSE AVAILABLE MOVES FOR ARCHER!");
+        System.out.print("1." + " " + "SHOOT: ");
+        archer.attack();
+        System.out.print("2." + " " + "DODGE: ");
+        archer.defend();
+        System.out.println();
+
+    }
+
+
+}
