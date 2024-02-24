@@ -1,0 +1,28 @@
+package strategyPattern;
+
+public class Knight {
+    private AttackStrategy attackStrategy;
+    private DefenseStrategy currentDefenseStrategy;
+    private DefenseStrategy[] defenseStrategies;
+    private int currentDefenseIndex;
+
+    public Knight(AttackStrategy attackStrategy, DefenseStrategy... defenseStrategies) {
+        this.attackStrategy = attackStrategy;
+        this.defenseStrategies = defenseStrategies;
+        this.currentDefenseIndex = 0;
+        this.currentDefenseStrategy = defenseStrategies[currentDefenseIndex];
+    }
+
+    public void switchDefenseStrategy() {
+        currentDefenseIndex = (currentDefenseIndex + 1) % defenseStrategies.length;
+        currentDefenseStrategy = defenseStrategies[currentDefenseIndex];
+    }
+
+    public void attack() {
+        attackStrategy.attack();
+    }
+
+    public void defend() {
+        currentDefenseStrategy.defend();
+    }
+}
