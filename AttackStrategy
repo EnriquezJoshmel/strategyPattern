@@ -1,0 +1,6 @@
+package strategyPattern;
+
+interface AttackStrategy {
+
+    void attack();
+}
