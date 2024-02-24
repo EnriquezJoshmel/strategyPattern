@@ -1,0 +1,8 @@
+package strategyPattern;
+
+class ShieldDefense implements DefenseStrategy {
+    @Override
+    public void defend() {
+        System.out.println("Using a Shield to defend");
+    }
+}
