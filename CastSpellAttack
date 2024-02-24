@@ -1,1 +1,9 @@
+package strategyPattern;
+
+class CastSpellAttack implements AttackStrategy {
+    @Override
+    public void attack() {
+        System.out.println("Wizard cast a Spell");
+    }
+}
 
