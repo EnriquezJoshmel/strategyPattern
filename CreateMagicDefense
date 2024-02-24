@@ -1,0 +1,8 @@
+package strategyPattern;
+
+class CreateMagicDefense implements DefenseStrategy {
+    @Override
+    public void defend() {
+        System.out.println("Creating a Magic Barrier for defense");
+    }
+}
